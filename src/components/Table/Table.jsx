@@ -739,29 +739,36 @@ export default function Table() {
   return (
 
     <div className='table-container'>
-      <button onClick={() => setShow(true)}>Show modal</button>
-
      <Modal 
      onClose={() => setCurrentClub(null)} 
      show={currentClub}
+     rank={currentClub?.rank}
      club={currentClub?.team.name}
+     logo={currentClub?.team.logo}
+     points={currentClub?.points}
+     goalsDiff={currentClub?.goalsDiff}
+     group={currentClub?.group}
+     form={currentClub?.form}
+     description={currentClub?.description}
+     played={currentClub?.all.played}
+     win={currentClub?.all.win}
+     draw={currentClub?.all.draw}
+     lose={currentClub?.all.lose}
+     goalsFor={currentClub?.all.goals.for}
+     goalsAgainst={currentClub?.all.goals.against}
      />
 
-      {currentClub &&
-        <div >
-          <h2> Details: {currentClub.rank} </h2>
-
-        </div>}
-      <input type="text" placeholder="Search..." onChange={(event) => {
+      
+      <input className='input-component' type="text" placeholder="Search team ..." onChange={(event) => {
         setSearchTerm(event.target.value)
       }} />
 
 
       <div className='table-row header'>
-        <div className='table-column'>Rank</div>
-        <div className='table-column'>Club</div>
-        <div className='table-column'>Crest</div>
-        <div className='table-column'>Points</div>
+        <div className='table-column rank'>Rank</div>
+        <div className='table-column club'>Club</div>
+        <div className='table-column crest'>Crest</div>
+        <div className='table-column points'>Points</div>
 
         
       </div>
@@ -773,10 +780,10 @@ export default function Table() {
         }
       }).map(item => (
         <div key={item.team.id} className='table-row' onClick={event => handleClub(item)}>
-          <div className='table-column'>{item.rank}</div>
-          <div className='table-column'>{item.team.name}</div>
-          <div className='table-column'><img src={item.team.logo} alt="" /></div>
-          <div className='table-column'>{item.points}</div>
+          <div className='table-column rank'>{item.rank}</div>
+          <div className='table-column club'>{item.team.name}</div>
+          <div className='table-column crest'><img className='logo' src={item.team.logo} alt="" /></div>
+          <div className='table-column points'>{item.points}</div>
         </div>
       ))
       }

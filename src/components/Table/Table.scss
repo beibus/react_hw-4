@@ -8,7 +8,6 @@
   }
   &-column {
     padding: 6px;
-    min-width: 200px;
     border: 1px solid black;
   }
 }
@@ -24,4 +23,34 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.logo {
+  height: 30px;
+  width: 30px;
+}
+
+.input-component {
+  margin: 50px;
+  width: 30%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+.rank {
+  min-width: 50px;
+}
+
+.club {
+  min-width: 300px;
+
+}
+
+.crest {
+  min-width: 80px;
+}
+
+.points {
+  min-width: 60px;
 }
