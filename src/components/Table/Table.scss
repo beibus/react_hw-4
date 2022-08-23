@@ -1,0 +1,27 @@
+.table {
+  font-size: 12px;
+  width: auto;
+  &-row {
+    display: flex;
+    justify-content: flex-start;
+    border: 1px solid black;
+  }
+  &-column {
+    padding: 6px;
+    min-width: 200px;
+    border: 1px solid black;
+  }
+}
+
+.header {
+  color: #4646f6;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.table-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
