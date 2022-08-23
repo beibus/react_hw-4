@@ -742,9 +742,9 @@ export default function Table() {
       <button onClick={() => setShow(true)}>Show modal</button>
 
      <Modal 
-     onClose={() => setShow(false)} 
-     show={show}
-     club={currentClub.team.name}
+     onClose={() => setCurrentClub(null)} 
+     show={currentClub}
+     club={currentClub?.team.name}
      />
 
       {currentClub &&
@@ -766,7 +766,7 @@ export default function Table() {
         
       </div>
       {eplTeams.filter((item) => {
-        if (searchTerm == "") {
+        if (searchTerm === "") {
           return item
         } else if (item.team.name.toLowerCase().includes(searchTerm.toLowerCase())) {
           return item
